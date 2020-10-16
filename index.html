@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Animated Search Box</title>
+</head>
+
+<body>
+    <div class="search-box">
+        <input type="text" placeholder="Search string">
+        <button class="close">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="expand">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+
+    <script>
+        var searchBox = document.querySelector('.search-box');
+        var btnExpand = document.querySelector('.expand');
+        var btnClose = document.querySelector('.close');
+        var inputEl = document.querySelector('.search-box input');
+
+        /* Expand button click */
+        btnExpand.addEventListener('click', function() {
+            searchBox.className = 'search-box opened';
+            inputEl.value = '';
+            inputEl.focus();
+        });
+
+        /* Close button click */
+        btnClose.addEventListener('click', function() {
+            searchBox.className = 'search-box';
+        });
+    </script>
+</body>
+
+</html>
